@@ -23,118 +23,131 @@
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
-            Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+            Me.components = New System.ComponentModel.Container()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+            Dim DataSourceColumnBinding1 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
+            Dim DataSourceColumnBinding2 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
+            Dim DataSourceColumnBinding3 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
+            Dim DataSourceColumnBinding4 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
+            Dim DataSourceColumnBinding5 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
             Me.ribbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
             Me.barButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
             Me.ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
             Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-            Me.defaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
+            Me.defaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
             Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
-            Me.nwindDataSet = New WinPivotExportCustomizeCell.Data.nwindDataSet()
-            Me.fieldCountry1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldProductName1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldCategoryName1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldExtendedPrice1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldSalesPerson1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.salesPersonTableAdapter1 = New WinPivotExportCustomizeCell.Data.nwindDataSetTableAdapters.SalesPersonTableAdapter()
-            DirectCast(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.nwindDataSet = New nwindDataSet()
+            Me.fieldCountry = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldProductName = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldCategoryName = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldExtendedPrice = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldSalesPerson = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.salesPersonTableAdapter1 = New nwindDataSetTableAdapters.SalesPersonTableAdapter()
+            CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
-            ' 
-            ' ribbonControl1
-            ' 
+            '
+            'ribbonControl1
+            '
             Me.ribbonControl1.ExpandCollapseItem.Id = 0
-            Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() { Me.ribbonControl1.ExpandCollapseItem, Me.barButtonItem1})
+            Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.barButtonItem1, Me.ribbonControl1.SearchEditItem})
             Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
             Me.ribbonControl1.MaxItemId = 2
             Me.ribbonControl1.Name = "ribbonControl1"
-            Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() { Me.ribbonPage1})
-            Me.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False
+            Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
+            Me.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
             Me.ribbonControl1.Size = New System.Drawing.Size(698, 147)
-            ' 
-            ' barButtonItem1
-            ' 
+            '
+            'barButtonItem1
+            '
             Me.barButtonItem1.Caption = "Export To Excel"
-            Me.barButtonItem1.Glyph = (DirectCast(resources.GetObject("barButtonItem1.Glyph"), System.Drawing.Image))
             Me.barButtonItem1.Id = 1
-            Me.barButtonItem1.LargeGlyph = (DirectCast(resources.GetObject("barButtonItem1.LargeGlyph"), System.Drawing.Image))
+            Me.barButtonItem1.ImageOptions.Image = CType(resources.GetObject("barButtonItem1.ImageOptions.Image"), System.Drawing.Image)
+            Me.barButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("barButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
             Me.barButtonItem1.Name = "barButtonItem1"
-            ' 
-            ' ribbonPage1
-            ' 
-            Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() { Me.ribbonPageGroup1})
+            '
+            'ribbonPage1
+            '
+            Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1})
             Me.ribbonPage1.Name = "ribbonPage1"
             Me.ribbonPage1.Text = "Main"
-            ' 
-            ' ribbonPageGroup1
-            ' 
+            '
+            'ribbonPageGroup1
+            '
             Me.ribbonPageGroup1.AllowTextClipping = False
             Me.ribbonPageGroup1.ItemLinks.Add(Me.barButtonItem1)
             Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
             Me.ribbonPageGroup1.Text = "Export"
-            ' 
-            ' defaultLookAndFeel1
-            ' 
+            '
+            'defaultLookAndFeel1
+            '
             Me.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray"
-            ' 
-            ' pivotGridControl1
-            ' 
+            '
+            'pivotGridControl1
+            '
             Me.pivotGridControl1.DataMember = "SalesPerson"
             Me.pivotGridControl1.DataSource = Me.nwindDataSet
             Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldCountry1, Me.fieldProductName1, Me.fieldCategoryName1, Me.fieldExtendedPrice1, Me.fieldSalesPerson1})
+            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.fieldCountry, Me.fieldProductName, Me.fieldCategoryName, Me.fieldExtendedPrice, Me.fieldSalesPerson})
             Me.pivotGridControl1.Location = New System.Drawing.Point(0, 147)
             Me.pivotGridControl1.Name = "pivotGridControl1"
+            Me.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized
             Me.pivotGridControl1.Size = New System.Drawing.Size(698, 310)
             Me.pivotGridControl1.TabIndex = 1
-            ' 
-            ' nwindDataSet
-            ' 
+            '
+            'nwindDataSet
+            '
+            Me.nwindDataSet.DataSetName = "nwindDataSet"
             Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-            ' 
-            ' fieldCountry1
-            ' 
-            Me.fieldCountry1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-            Me.fieldCountry1.AreaIndex = 0
-            Me.fieldCountry1.FieldName = "Country"
-            Me.fieldCountry1.Name = "fieldCountry1"
-            ' 
-            ' fieldProductName1
-            ' 
-            Me.fieldProductName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-            Me.fieldProductName1.AreaIndex = 1
-            Me.fieldProductName1.FieldName = "ProductName"
-            Me.fieldProductName1.Name = "fieldProductName1"
-            ' 
-            ' fieldCategoryName1
-            ' 
-            Me.fieldCategoryName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-            Me.fieldCategoryName1.AreaIndex = 0
-            Me.fieldCategoryName1.FieldName = "CategoryName"
-            Me.fieldCategoryName1.Name = "fieldCategoryName1"
-            ' 
-            ' fieldExtendedPrice1
-            ' 
-            Me.fieldExtendedPrice1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-            Me.fieldExtendedPrice1.AreaIndex = 0
-            Me.fieldExtendedPrice1.FieldName = "Extended Price"
-            Me.fieldExtendedPrice1.Name = "fieldExtendedPrice1"
-            ' 
-            ' fieldSalesPerson1
-            ' 
-            Me.fieldSalesPerson1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-            Me.fieldSalesPerson1.AreaIndex = 1
-            Me.fieldSalesPerson1.FieldName = "Sales Person"
-            Me.fieldSalesPerson1.Name = "fieldSalesPerson1"
-            ' 
-            ' salesPersonTableAdapter1
-            ' 
+            '
+            'fieldCountry
+            '
+            Me.fieldCountry.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+            Me.fieldCountry.AreaIndex = 0
+            DataSourceColumnBinding1.ColumnName = "Country"
+            Me.fieldCountry.DataBinding = DataSourceColumnBinding1
+            Me.fieldCountry.Name = "fieldCountry"
+            '
+            'fieldProductName
+            '
+            Me.fieldProductName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+            Me.fieldProductName.AreaIndex = 1
+            DataSourceColumnBinding2.ColumnName = "ProductName"
+            Me.fieldProductName.DataBinding = DataSourceColumnBinding2
+            Me.fieldProductName.Name = "fieldProductName"
+            '
+            'fieldCategoryName
+            '
+            Me.fieldCategoryName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+            Me.fieldCategoryName.AreaIndex = 0
+            DataSourceColumnBinding3.ColumnName = "CategoryName"
+            Me.fieldCategoryName.DataBinding = DataSourceColumnBinding3
+            Me.fieldCategoryName.Name = "fieldCategoryName"
+            '
+            'fieldExtendedPrice
+            '
+            Me.fieldExtendedPrice.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+            Me.fieldExtendedPrice.AreaIndex = 0
+            DataSourceColumnBinding4.ColumnName = "Extended Price"
+            Me.fieldExtendedPrice.DataBinding = DataSourceColumnBinding4
+            Me.fieldExtendedPrice.Name = "fieldExtendedPrice"
+            '
+            'fieldSalesPerson
+            '
+            Me.fieldSalesPerson.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+            Me.fieldSalesPerson.AreaIndex = 1
+            DataSourceColumnBinding5.ColumnName = "Sales Person"
+            Me.fieldSalesPerson.DataBinding = DataSourceColumnBinding5
+            Me.fieldSalesPerson.Name = "fieldSalesPerson"
+            '
+            'salesPersonTableAdapter1
+            '
             Me.salesPersonTableAdapter1.ClearBeforeFill = True
-            ' 
-            ' Form1
-            ' 
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
+            '
+            'Form1
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.ClientSize = New System.Drawing.Size(698, 457)
             Me.Controls.Add(Me.pivotGridControl1)
@@ -142,15 +155,15 @@
             Me.Name = "Form1"
             Me.Ribbon = Me.ribbonControl1
             Me.Text = "DevExpress Pivot Grid control"
-            DirectCast(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
             Me.PerformLayout()
 
         End Sub
 
-        #End Region
+#End Region
 
         Private ribbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
         Private ribbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
@@ -158,13 +171,13 @@
         Private WithEvents barButtonItem1 As DevExpress.XtraBars.BarButtonItem
         Private defaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
         Private pivotGridControl1 As DevExpress.XtraPivotGrid.PivotGridControl
-        Private nwindDataSet As Data.nwindDataSet
-        Private fieldCountry1 As DevExpress.XtraPivotGrid.PivotGridField
-        Private fieldProductName1 As DevExpress.XtraPivotGrid.PivotGridField
-        Private fieldCategoryName1 As DevExpress.XtraPivotGrid.PivotGridField
-        Private fieldExtendedPrice1 As DevExpress.XtraPivotGrid.PivotGridField
-        Private fieldSalesPerson1 As DevExpress.XtraPivotGrid.PivotGridField
-        Private salesPersonTableAdapter1 As Data.nwindDataSetTableAdapters.SalesPersonTableAdapter
+        Private nwindDataSet As nwindDataSet
+        Private fieldCountry As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldProductName As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldCategoryName As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldExtendedPrice As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldSalesPerson As DevExpress.XtraPivotGrid.PivotGridField
+        Private salesPersonTableAdapter1 As nwindDataSetTableAdapters.SalesPersonTableAdapter
     End Class
 End Namespace
 

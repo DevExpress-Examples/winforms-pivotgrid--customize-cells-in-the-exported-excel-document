@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding1 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding2 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding3 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding4 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding5 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.nwindDataSet = new WinPivotExportCustomizeCell.Data.nwindDataSet();
-            this.fieldCountry1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldProductName1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldCategoryName1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldExtendedPrice1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldSalesPerson1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCountry = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldProductName = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCategoryName = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldExtendedPrice = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesPerson = new DevExpress.XtraPivotGrid.PivotGridField();
             this.salesPersonTableAdapter1 = new WinPivotExportCustomizeCell.Data.nwindDataSetTableAdapters.SalesPersonTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
@@ -52,7 +58,8 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.ribbonControl1.SearchEditItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 2;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -64,9 +71,9 @@
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "Export To Excel";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
             this.barButtonItem1.Id = 1;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
@@ -94,54 +101,61 @@
             this.pivotGridControl1.DataSource = this.nwindDataSet;
             this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pivotGridControl1.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
-            this.fieldCountry1,
-            this.fieldProductName1,
-            this.fieldCategoryName1,
-            this.fieldExtendedPrice1,
-            this.fieldSalesPerson1});
+            this.fieldCountry,
+            this.fieldProductName,
+            this.fieldCategoryName,
+            this.fieldExtendedPrice,
+            this.fieldSalesPerson});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 147);
             this.pivotGridControl1.Name = "pivotGridControl1";
+            this.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized;
             this.pivotGridControl1.Size = new System.Drawing.Size(698, 310);
             this.pivotGridControl1.TabIndex = 1;
             // 
             // nwindDataSet
             // 
+            this.nwindDataSet.DataSetName = "nwindDataSet";
             this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fieldCountry1
+            // fieldCountry
             // 
-            this.fieldCountry1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldCountry1.AreaIndex = 0;
-            this.fieldCountry1.FieldName = "Country";
-            this.fieldCountry1.Name = "fieldCountry1";
+            this.fieldCountry.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.fieldCountry.AreaIndex = 0;
+            dataSourceColumnBinding1.ColumnName = "Country";
+            this.fieldCountry.DataBinding = dataSourceColumnBinding1;
+            this.fieldCountry.Name = "fieldCountry";
             // 
-            // fieldProductName1
+            // fieldProductName
             // 
-            this.fieldProductName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldProductName1.AreaIndex = 1;
-            this.fieldProductName1.FieldName = "ProductName";
-            this.fieldProductName1.Name = "fieldProductName1";
+            this.fieldProductName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldProductName.AreaIndex = 1;
+            dataSourceColumnBinding2.ColumnName = "ProductName";
+            this.fieldProductName.DataBinding = dataSourceColumnBinding2;
+            this.fieldProductName.Name = "fieldProductName";
             // 
-            // fieldCategoryName1
+            // fieldCategoryName
             // 
-            this.fieldCategoryName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldCategoryName1.AreaIndex = 0;
-            this.fieldCategoryName1.FieldName = "CategoryName";
-            this.fieldCategoryName1.Name = "fieldCategoryName1";
+            this.fieldCategoryName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldCategoryName.AreaIndex = 0;
+            dataSourceColumnBinding3.ColumnName = "CategoryName";
+            this.fieldCategoryName.DataBinding = dataSourceColumnBinding3;
+            this.fieldCategoryName.Name = "fieldCategoryName";
             // 
-            // fieldExtendedPrice1
+            // fieldExtendedPrice
             // 
-            this.fieldExtendedPrice1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldExtendedPrice1.AreaIndex = 0;
-            this.fieldExtendedPrice1.FieldName = "Extended Price";
-            this.fieldExtendedPrice1.Name = "fieldExtendedPrice1";
+            this.fieldExtendedPrice.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldExtendedPrice.AreaIndex = 0;
+            dataSourceColumnBinding4.ColumnName = "Extended Price";
+            this.fieldExtendedPrice.DataBinding = dataSourceColumnBinding4;
+            this.fieldExtendedPrice.Name = "fieldExtendedPrice";
             // 
-            // fieldSalesPerson1
+            // fieldSalesPerson
             // 
-            this.fieldSalesPerson1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldSalesPerson1.AreaIndex = 1;
-            this.fieldSalesPerson1.FieldName = "Sales Person";
-            this.fieldSalesPerson1.Name = "fieldSalesPerson1";
+            this.fieldSalesPerson.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.fieldSalesPerson.AreaIndex = 1;
+            dataSourceColumnBinding5.ColumnName = "Sales Person";
+            this.fieldSalesPerson.DataBinding = dataSourceColumnBinding5;
+            this.fieldSalesPerson.Name = "fieldSalesPerson";
             // 
             // salesPersonTableAdapter1
             // 
@@ -175,11 +189,11 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
         private Data.nwindDataSet nwindDataSet;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldCountry1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldProductName1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldCategoryName1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldExtendedPrice1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldSalesPerson1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCountry;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldProductName;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCategoryName;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldExtendedPrice;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSalesPerson;
         private Data.nwindDataSetTableAdapters.SalesPersonTableAdapter salesPersonTableAdapter1;
     }
 }
