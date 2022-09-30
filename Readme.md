@@ -5,7 +5,7 @@
 
 # Pivot Grid for WinForms - Сustomize Сells in the Exported Excel Document
 
-The following example shows how to customize cells appearance in the exported document when you export the Pivot Grid to XLSX (or XLS) format. In this example, custom appearance settings (the azure background and italic font) are applied to the cells that correspond to the Pivot Grid's data area. 
+The following example shows how to customize cell appearance in the exported document when you export the Pivot Grid to XLSX (or XLS) format. In this example, custom appearance settings (the azure background and italic font) are applied to the cells that correspond to the Pivot Grid's data area.
 
 ![Pivot Grid](images/pivotgrid.png)
 
