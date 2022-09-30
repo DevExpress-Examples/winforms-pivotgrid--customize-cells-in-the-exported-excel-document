@@ -15,7 +15,7 @@ The following example shows how to customize cell appearance in the exported doc
 
 ## Example Overview
 
-Handle the [PivotXlsxExportOptions.CustomizeCell](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotXlsxExportOptions.CustomizeCell) or [PivotXlsExportOptions.CustomizeCell](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotXlsExportOptions.CustomizeCell) event to customize cells appearance in the exported document. 
+Handle the [PivotXlsxExportOptions.CustomizeCell](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotXlsxExportOptions.CustomizeCell) or [PivotXlsExportOptions.CustomizeCell](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotXlsExportOptions.CustomizeCell) event to customize cell appearance in the exported document.
 
 Use the [e.ExportArea](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.CustomizePivotCellEventArgs.ExportArea) property to identify the cell location in the exported Excel document. The [e.Formatting](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.CustomizePivotCellEventArgs.Formatting) property sets the cell format. 
 
